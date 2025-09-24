@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="idealpostcodes" translate="label" type="text" sortOrder="820" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Ideal Postcodes</label>
+            <tab>services</tab>
+            <resource>Idealpostcodes_AddressValidation::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Address Validation</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Validation</label>
+                    <source_model>Magento\\Config\\Model\\Config\\Source\\Yesno</source_model>
+                </field>
+                <field id="api_key" translate="label" type="obscure" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API Key</label>
+                    <backend_model>Magento\\Config\\Model\\Config\\Backend\\Encrypted</backend_model>
+                </field>
+                <field id="country_filter" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Restrict to Countries</label>
+                    <comment>Leave empty to validate all countries. Uses ISO2 country codes.</comment>
+                    <source_model>Magento\\Directory\\Model\\Config\\Source\\Country</source_model>
+                </field>
+                <field id="minimum_score" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Minimum Match Score</label>
+                    <validate>validate-number validate-not-negative</validate>
+                    <comment>Numeric value between 0 and 1 representing the minimum confidence score accepted for a suggestion.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

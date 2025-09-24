@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/config.xsd">
+    <default>
+        <idealpostcodes>
+            <general>
+                <enabled>0</enabled>
+                <api_key></api_key>
+                <country_filter>GB</country_filter>
+                <minimum_score>0.6</minimum_score>
+            </general>
+        </idealpostcodes>
+    </default>
+</config>
