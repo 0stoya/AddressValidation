@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Customer\Api\AddressRepositoryInterface">
+        <plugin name="idealpostcodes_address_validation_customer_address_save" type="Idealpostcodes\AddressValidation\Plugin\Customer\AddressRepositoryPlugin" sortOrder="10" />
+    </type>
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="idealpostcodes_address_validation_shipping_information" type="Idealpostcodes\AddressValidation\Plugin\Checkout\ShippingInformationManagementPlugin" sortOrder="10" />
+    </type>
+    <type name="Magento\Checkout\Model\PaymentInformationManagement">
+        <plugin name="idealpostcodes_address_validation_payment_information" type="Idealpostcodes\AddressValidation\Plugin\Checkout\PaymentInformationManagementPlugin" sortOrder="10" />
+    </type>
+    <type name="Magento\Checkout\Model\GuestPaymentInformationManagement">
+        <plugin name="idealpostcodes_address_validation_guest_payment_information" type="Idealpostcodes\AddressValidation\Plugin\Checkout\GuestPaymentInformationManagementPlugin" sortOrder="10" />
+    </type>
+</config>
